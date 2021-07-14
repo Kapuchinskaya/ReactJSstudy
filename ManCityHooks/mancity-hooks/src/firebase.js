@@ -3,7 +3,7 @@ import "firebase/app";
 import "firebase/database";
 import 'firebase/storage';
 
-// import {cityDb} from './temp/m-city-export'
+ import {cityDb} from './temp/m-city-export'
 
 const config = {
   //из firebase   var firebaseConfig = {
