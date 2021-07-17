@@ -6,7 +6,7 @@ const Featured = () => {
     return (
         <div className="featured_wrapper">
             <Stripes/>
-            {/* <Text/> */}
+            <Text/>
             some text
         </div>
     );
