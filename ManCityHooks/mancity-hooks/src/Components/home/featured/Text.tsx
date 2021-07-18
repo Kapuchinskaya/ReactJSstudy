@@ -1,10 +1,10 @@
-import React, { Component } from "react";
 import { easePolyOut } from "d3-ease";
-import Animate from "react-move/Animate";
-
 import FeaturedPlayer from "../../../Resources/images/featured_player.png";
+import { Animate } from "react-move";
+import { ArrowFunctionElement } from "../../Common/types";
 
-const Text = () => {
+const Text: ArrowFunctionElement = (): JSX.Element => {
+  // tslint:disable-next-line: typedef
   const animateNumber = () => (
     <Animate
       show={true}
@@ -13,12 +13,15 @@ const Text = () => {
         rotate: 0,
       }}
       enter={{
-        opacity: [1], //важно! []
+        opacity: [1],
         rotate: [360],
         timing: { duration: 1000, ease: easePolyOut },
       }}
     >
-      {({ opacity, rotate }) => (
+      {(
+        // tslint:disable-next-line: typedef
+        { opacity, rotate }
+      ) => (
         <div
           className="featured_number"
           style={{
@@ -32,6 +35,7 @@ const Text = () => {
     </Animate>
   );
 
+  // tslint:disable-next-line: typedef
   const animateFirst = () => (
     <Animate
       show={true}
@@ -47,7 +51,10 @@ const Text = () => {
         timing: { duration: 500, ease: easePolyOut },
       }}
     >
-      {({ opacity, x, y }) => {
+      {(
+        // tslint:disable-next-line: typedef
+        { opacity, x, y }
+      ) => {
         return (
           <div
             className="featured_first"
@@ -63,6 +70,7 @@ const Text = () => {
     </Animate>
   );
 
+  // tslint:disable-next-line: typedef
   const animateSecond = () => (
     <Animate
       show={true}
@@ -78,7 +86,10 @@ const Text = () => {
         timing: { delay: 300, duration: 500, ease: easePolyOut },
       }}
     >
-      {({ opacity, x, y }) => {
+      {(
+        // tslint:disable-next-line: typedef
+        { opacity, x, y }
+      ) => {
         return (
           <div
             className="featured_second"
@@ -94,6 +105,7 @@ const Text = () => {
     </Animate>
   );
 
+  // tslint:disable-next-line: typedef
   const animatePlayer = () => (
     <Animate
       show={true}
@@ -105,7 +117,10 @@ const Text = () => {
         timing: { delay: 800, duration: 500, ease: easePolyOut },
       }}
     >
-      {({ opacity }) => {
+      {(
+        // tslint:disable-next-line: typedef
+        { opacity }
+      ) => {
         return (
           <div
             className="featured_player"
@@ -114,7 +129,7 @@ const Text = () => {
               background: `url(${FeaturedPlayer})`,
               transform: `translate(550px,201px)`,
             }}
-          ></div>
+          />
         );
       }}
     </Animate>

@@ -1,13 +1,11 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
+import { AppBar, Toolbar, Button } from "@material-ui/core";
 
 import { Link } from "react-router-dom";
 
 import { CityLogo } from "../ui/icons";
+import { ArrowFunctionElement } from "../Common/types";
 
-const Header = () => {
+const Header: ArrowFunctionElement = (): JSX.Element => {
   return (
     <AppBar
       position="fixed"

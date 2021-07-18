@@ -1,7 +1,7 @@
-import React from "react";
 import { CityLogo } from "../ui/icons";
+import { ArrowFunctionElement } from "../Common/types";
 
-const Footer = () => {
+const Footer: ArrowFunctionElement = (): JSX.Element => {
   return (
     <footer className="bck_blue">
       <div className="footer_logo">

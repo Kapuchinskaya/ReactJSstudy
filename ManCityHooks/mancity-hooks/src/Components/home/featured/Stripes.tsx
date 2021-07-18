@@ -1,8 +1,19 @@
-import React, { useState } from "react";
 import { easePolyOut } from "d3-ease";
-import Animate from "react-move/Animate";
+import { Animate } from "react-move";
+import {
+  ArrowFunctionElement,
+  ArrowFunctionElements,
+} from "../../Common/types";
 
-const stripes = [
+interface Stripe {
+  background: string;
+  left: number;
+  rotate: number;
+  top: number;
+  delay: number;
+}
+
+const stripes: Stripe[] = [
   {
     background: "#98c5e9",
     left: 120,
@@ -26,8 +37,9 @@ const stripes = [
   },
 ];
 
-const Stripes = () => {
-  const showStripes = () => {
+const Stripes: ArrowFunctionElement = (): JSX.Element => {
+  const showStripes: ArrowFunctionElements = (): JSX.Element[] => {
+    // tslint:disable-next-line: typedef
     return stripes.map((stripe, i) => (
       <Animate
         key={i}
@@ -53,18 +65,21 @@ const Stripes = () => {
           },
         }}
       >
-        {({ opacity, left, rotate, top, background }) => {
-          return (
-            <div
-              className="stripe"
-              style={{
-                background,
-                opacity,
-                transform: `rotate(${rotate}deg) translate(${left}px,${top}px)`,
-              }}
-            ></div>
-          );
-        }}
+        {
+          // tslint:disable-next-line: typedef
+          ({ opacity, left, rotate, top, background }) => {
+            return (
+              <div
+                className="stripe"
+                style={{
+                  background,
+                  opacity,
+                  transform: `rotate(${rotate}deg) translate(${left}px,${top}px)`,
+                }}
+              />
+            );
+          }
+        }
       </Animate>
     ));
   };
