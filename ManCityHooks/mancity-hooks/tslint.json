@@ -27,7 +27,6 @@
       "arrow-parameter",
       "member-variable-declaration",
       "property-declaration",
-      "variable-declaration",
       "object-destructuring",
       "array-destructuring"
     ]
