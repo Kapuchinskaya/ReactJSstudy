@@ -1,10 +1,8 @@
 import { easePolyOut } from "d3-ease";
 import FeaturedPlayer from "../../../Resources/images/featured_player.png";
 import { Animate } from "react-move";
-import { ArrowFunctionElement } from "../../Common/types";
 
-const Text: ArrowFunctionElement = (): JSX.Element => {
-  // tslint:disable-next-line: typedef
+const Text = () => {
   const animateNumber = () => (
     <Animate
       show={true}
@@ -19,7 +17,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
       }}
     >
       {(
-        // tslint:disable-next-line: typedef
         { opacity, rotate }
       ) => (
         <div
@@ -29,13 +26,12 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
             transform: `translate(260px,170px) rotateY(${rotate}deg)`,
           }}
         >
-          3
+          5
         </div>
       )}
     </Animate>
   );
 
-  // tslint:disable-next-line: typedef
   const animateFirst = () => (
     <Animate
       show={true}
@@ -52,7 +48,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
       }}
     >
       {(
-        // tslint:disable-next-line: typedef
         { opacity, x, y }
       ) => {
         return (
@@ -70,7 +65,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
     </Animate>
   );
 
-  // tslint:disable-next-line: typedef
   const animateSecond = () => (
     <Animate
       show={true}
@@ -87,7 +81,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
       }}
     >
       {(
-        // tslint:disable-next-line: typedef
         { opacity, x, y }
       ) => {
         return (
@@ -105,7 +98,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
     </Animate>
   );
 
-  // tslint:disable-next-line: typedef
   const animatePlayer = () => (
     <Animate
       show={true}
@@ -118,7 +110,6 @@ const Text: ArrowFunctionElement = (): JSX.Element => {
       }}
     >
       {(
-        // tslint:disable-next-line: typedef
         { opacity }
       ) => {
         return (

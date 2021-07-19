@@ -1,8 +1,7 @@
 import Stripes from "./Stripes";
 import Text from "./Text";
-import { ArrowFunctionElement } from "../../Common/types";
 
-const Featured: ArrowFunctionElement = (): JSX.Element => {
+const Featured = () => {
   return (
     <div className="featured_wrapper">
       <Stripes />

@@ -1,19 +1,7 @@
 import { easePolyOut } from "d3-ease";
 import { Animate } from "react-move";
-import {
-  ArrowFunctionElement,
-  ArrowFunctionElements,
-} from "../../Common/types";
 
-interface Stripe {
-  background: string;
-  left: number;
-  rotate: number;
-  top: number;
-  delay: number;
-}
-
-const stripes: Stripe[] = [
+const stripes = [
   {
     background: "#98c5e9",
     left: 120,
@@ -37,9 +25,8 @@ const stripes: Stripe[] = [
   },
 ];
 
-const Stripes: ArrowFunctionElement = (): JSX.Element => {
-  const showStripes: ArrowFunctionElements = (): JSX.Element[] => {
-    // tslint:disable-next-line: typedef
+const Stripes = () => {
+  const showStripes = () => {
     return stripes.map((stripe, i) => (
       <Animate
         key={i}
