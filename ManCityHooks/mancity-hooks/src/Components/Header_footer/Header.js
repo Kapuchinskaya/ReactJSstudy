@@ -5,21 +5,10 @@ import { Link } from "react-router-dom";
 import { CityLogo } from "../ui/icons";
 
 import { firebase } from "../../firebase";
-import { showErrorToast, showSuccessToast } from "../Utils/tools";
+import { showErrorToast, showSuccessToast, logoutHandler } from "../Utils/tools";
+
 
 const Header = ({ user }) => {
-  const logoutHandler = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        showSuccessToast("Good bye!!");
-      })
-      .catch((error) => {
-        showErrorToast(error.message);
-      });
-  };
-
   return (
     <AppBar
       position="fixed"
