@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import "firebase/app";
 import "firebase/database";
 
+// import {cityDb} from './temp/m-city-export'
+
 const config = {
   //из firebase   var firebaseConfig = {
   apiKey: "AIzaSyD-SrQC7fPyTtlDDgFdUu3w-QoBvWCp2GM",
@@ -16,10 +18,42 @@ const config = {
 
 firebase.initializeApp(config);
 
-//connecting Database
-const firebaseDB = firebase.database();
-const firebaseMatches = firebaseDB.ref("matches");
+//passing data to FB
 
-const firebasePromotions = firebaseDB.ref('promotions');
+const DB = firebase.firestore();
+const matchesCollection = DB.collection('matches');
+const playersCollection = DB.collection('players');
+const positionsCollection = DB.collection('positions');
+const promotionsCollection = DB.collection('promotions');
+const teamsCollection = DB.collection('teams');
 
-export { firebase, firebaseMatches, firebasePromotions };
+// cityDb.matches.forEach(item => {
+//   matchesCollection.add(item)
+// });
+
+// cityDb.players.forEach(item => {
+//   playersCollection.add(item)
+// });
+
+// cityDb.positions.forEach(item => {
+//   positionsCollection.add(item)
+// });
+
+// cityDb.promotions.forEach(item => {
+//   promotionsCollection.add(item)
+// });
+
+// cityDb.teams.forEach(item => {
+//   teamsCollection.add(item)
+// });
+
+
+
+export {
+    firebase,
+    matchesCollection,
+    playersCollection,
+    positionsCollection,
+    promotionsCollection,
+    teamsCollection
+}
