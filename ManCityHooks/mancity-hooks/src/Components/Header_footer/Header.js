@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { CityLogo } from "../ui/icons";
 
 import { firebase } from "../../firebase";
-import { showErrorToast, showSuccessToast, logoutHandler } from "../Utils/tools";
-
+import {
+  showErrorToast,
+  showSuccessToast,
+  logoutHandler,
+} from "../Utils/tools";
 
 const Header = ({ user }) => {
   return (
@@ -26,15 +29,16 @@ const Header = ({ user }) => {
           </div>
         </div>
 
-        <Link to="/the_team">
-          <Button color="inherit">The team</Button>
-        </Link>
         <Link to="/the_matches">
           <Button color="inherit">Matches</Button>
         </Link>
 
         {user ? (
           <>
+            <Link to="/the_team">
+              <Button color="inherit">The team</Button>
+            </Link>
+
             <Link to="/dashboard">
               <Button color="inherit">Dashboard</Button>
             </Link>
@@ -43,7 +47,11 @@ const Header = ({ user }) => {
               Log out
             </Button>
           </>
-        ) : null}
+        ) : (
+          <Link to="/sign_in">
+            <Button color="inherit">Sign in</Button>
+          </Link>
+        )}
       </Toolbar>
     </AppBar>
   );

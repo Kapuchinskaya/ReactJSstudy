@@ -12,8 +12,8 @@ const SignIn = (props) => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
-      email: "francis@gmail.com",
-      password: "testing123",
+      email: "volyas1@gmail.com",
+      password: "123123",
     },
     validationSchema: Yup.object({
       email: Yup.string()
